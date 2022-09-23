@@ -58,9 +58,8 @@ h1 {
 
 .form-active,
 .form-edit {
-  width: 50%;
   margin: 1rem auto;
-  padding: 3rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -88,7 +87,7 @@ label {
 .container {
   width: 50%;
   margin: 1rem auto;
-  padding: 3rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   background-color: lightgray;

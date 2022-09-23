@@ -38,6 +38,9 @@ async function editUser() {
       status: editStatusInput.value,
     }),
   });
+
+  alert("Atualizado com sucesso!");
+  location.href = `/index.html`;
 }
 
 getDetail();
