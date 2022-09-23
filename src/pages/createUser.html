@@ -9,40 +9,45 @@
     <title>Registrar</title>
   </head>
   <body>
-    <form class="form-active" method="post">
-      <label for="name">Nome:</label>
-      <input
-        required
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Ex: José ou Maria"
-      />
+    <div class="container">
+      <h1>Criar usuário</h1>
+      <form class="form-active" method="post">
+        <label for="name">Nome:</label>
+        <input
+          required
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Ex: José ou Maria"
+        />
 
-      <label for="email">Email:</label>
-      <input
-        required
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Ex: exemplo@exemplo.com"
-      />
+        <label for="email">Email:</label>
+        <input
+          required
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Ex: exemplo@exemplo.com"
+        />
 
-      <label for="gender">Gênero:</label>
-      <select required name="gender" id="gender">
-        <option></option>
-        <option value="male">Masculino</option>
-        <option value="female">Feminino</option>
-      </select>
+        <label for="gender">Gênero:</label>
+        <select required name="gender" id="gender">
+          <option></option>
+          <option value="male">Masculino</option>
+          <option value="female">Feminino</option>
+        </select>
 
-      <label for="status">Status:</label>
-      <select required name="status" id="status">
-        <option></option>
-        <option value="active">Ativado</option>
-        <option value="disabled">Desativado</option>
-      </select>
+        <label for="status">Status:</label>
+        <select required name="status" id="status">
+          <option></option>
+          <option value="active">Ativado</option>
+          <option value="disabled">Desativado</option>
+        </select>
 
-      <button type="submit" onclick="submit()">Registrar</button>
-    </form>
+        <button type="submit" class="button-form" onclick="submit()">
+          Registrar
+        </button>
+      </form>
+    </div>
   </body>
 </html>

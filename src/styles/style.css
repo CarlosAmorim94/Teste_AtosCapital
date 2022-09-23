@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  font-family: Arial, sans-serif;
 }
 
 .new-register {
@@ -12,8 +13,8 @@
   border: none;
   margin-bottom: 1rem;
   cursor: pointer;
-  opacity: .8;
-  transition: all ease .2s;
+  opacity: 0.8;
+  transition: all ease 0.2s;
 }
 
 .new-register:hover {
@@ -33,14 +34,13 @@ tbody tr:nth-child(2n) {
 }
 
 td {
-  color;#000;
+  color: #000;
   padding: 0.5rem 1rem;
 }
 
-
 .action-buttons button {
   cursor: pointer;
-  margin:  0 2px;
+  margin: 0 2px;
 }
 
 .action-buttons button:hover {
@@ -50,7 +50,47 @@ td {
   border: 2px solid #213435;
 }
 
-.form-active {
+h1 {
+  width: 100%;
+  text-align: center;
+  color: #334df9;
+}
+
+.form-active,
+.form-edit {
+  width: 50%;
+  margin: 1rem auto;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
+}
+
+label {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.button-form {
+  padding: 0.5rem;
+  background-color: #334df9;
+  color: #fff;
+  border: none;
+  margin: 1rem 0;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all ease 0.2s;
+}
+
+.button-form:hover {
+  opacity: 1;
+}
+
+.container {
+  width: 50%;
+  margin: 1rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  border-radius: 1rem;
 }
