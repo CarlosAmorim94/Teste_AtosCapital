@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/main.js" defer></script>
+    <title>Registrar</title>
+  </head>
+  <body>
+    <form class="form-active" method="post">
+      <label for="name">Nome:</label>
+      <input
+        required
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Ex: José ou Maria"
+      />
+
+      <label for="email">Email:</label>
+      <input
+        required
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Ex: exemplo@exemplo.com"
+      />
+
+      <label for="gender">Gênero:</label>
+      <select required name="gender" id="gender">
+        <option></option>
+        <option value="male">Masculino</option>
+        <option value="female">Feminino</option>
+      </select>
+
+      <label for="status">Status:</label>
+      <select required name="status" id="status">
+        <option></option>
+        <option value="active">Ativado</option>
+        <option value="disabled">Desativado</option>
+      </select>
+
+      <button type="submit" onclick="submit()">Registrar</button>
+    </form>
+  </body>
+</html>

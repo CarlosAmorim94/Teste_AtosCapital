@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/editUsers.js" defer></script>
+    <title>Editar</title>
+  </head>
+  <body>
+    <h1>Editando!</h1>
+    <form class="form-edit" method="put">
+      <label for="name-edit">Nome:</label>
+      <input
+        required
+        type="text"
+        name="name"
+        id="name-edit"
+        placeholder="Ex: José ou Maria"
+      />
+
+      <label for="email-edit">Email:</label>
+      <input
+        required
+        type="email"
+        name="email"
+        id="email-edit"
+        placeholder="Ex: exemplo@exemplo.com"
+      />
+
+      <label for="gender-edit">Gênero:</label>
+      <select required name="gender" id="gender-edit">
+        <option></option>
+        <option value="male">Masculino</option>
+        <option value="female">Feminino</option>
+      </select>
+
+      <label for="status-edit">Status:</label>
+      <select required name="status" id="status-edit">
+        <option></option>
+        <option value="active">Ativado</option>
+        <option value="disabled">Desativado</option>
+      </select>
+
+      <button type="submit">Editar</button>
+    </form>
+  </body>
+</html>

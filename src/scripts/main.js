@@ -70,7 +70,7 @@ async function addUser() {
 }
 
 async function editUser(id) {
-  console.log("clicou", id);
+  location.href = `/src/pages/edit_users.html?id=${id}`;
 }
 
 async function deleteUser(id) {
