@@ -1,6 +1,5 @@
-const token =
-  "592116e2b217eea89dbd106c1736451b52d79a4b1d0e0fd8ea526c3ec0c2bd32";
-const baseURL = "https://gorest.co.in/public/v2/users";
+import { variables } from "../utils/variables.js";
+
 const editForm = document.querySelector(".form-edit");
 const editNameInput = document.querySelector("#name-edit");
 const editEmailInput = document.querySelector("#email-edit");
@@ -11,7 +10,7 @@ const paramsURL = new URL(window.location);
 const id = paramsURL.searchParams.get("id");
 
 async function getDetail() {
-  const userDetail = await fetch(`${baseURL}/${id}`)
+  const userDetail = await fetch(`${variables.baseURL}/${id}`)
     .then((user) => user.json())
     .catch((error) => {
       console.error("Error:", error);
@@ -24,11 +23,11 @@ async function getDetail() {
 }
 
 async function editUser() {
-  const response = await fetch(`${baseURL}/${id}`, {
+  const response = await fetch(`${variables.baseURL}/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${variables.token}`,
     },
     body: JSON.stringify({
       id,

@@ -1,6 +1,6 @@
-const token =
-  "592116e2b217eea89dbd106c1736451b52d79a4b1d0e0fd8ea526c3ec0c2bd32";
-const baseURL = "https://gorest.co.in/public/v2/users";
+import { services } from "../utils/services.js";
+import { variables } from "../utils/variables.js";
+
 const form = document.querySelector(".form-active");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
@@ -9,7 +9,7 @@ const statusInput = document.querySelector("#status");
 
 async function getUsers() {
   const tbody = document.querySelector(".tbody");
-  const response = await fetch(`${baseURL}`)
+  const response = await fetch(`${variables.baseURL}`)
     .then((users) => users.json())
     .catch((error) => {
       console.error("Error:", error);
@@ -55,13 +55,11 @@ async function addUser() {
     gender: genderInput.value,
   };
 
-  console.log(newUser);
-
-  await fetch(baseURL, {
+  await fetch(variables.baseURL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${variables.token}`,
     },
     body: JSON.stringify(newUser),
   }).catch((error) => {
@@ -74,12 +72,7 @@ async function editUser(id) {
 }
 
 async function deleteUser(id) {
-  const response = await fetch(`${baseURL}/${id}`, {
-    method: "DELETE",
-    headers: { Authorization: `Bearer ${token}` },
-  }).catch((error) => {
-    console.error("Error:", error);
-  });
+  services.deleteItem(id);
   alert("Item deletado!");
   location.reload();
 }
