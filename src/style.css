@@ -38,14 +38,19 @@ td {
 }
 
 
-.action-button button {
+.action-buttons button {
   cursor: pointer;
+  margin:  0 2px;
 }
 
-.action-button button:hover {
+.action-buttons button:hover {
   background-color: #213435;
   color: #fff;
   border-radius: 2px;
   border: 2px solid #213435;
 }
 
+.form-active {
+  display: flex;
+  flex-direction: column;
+}

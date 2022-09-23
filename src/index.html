@@ -5,13 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="./main.js" type="module" defer></script>
+    <script src="./main.js" defer></script>
     <title>Crud-JS-GoREST</title>
   </head>
   <body>
     <header>
-      <button class="new-register">Novo Registro</button>
+      <button class="new-register" onclick="addUser()">Novo Registro</button>
     </header>
+
+    <form class="form-active" method="post">
+      <label for="name">Nome:</label>
+      <input
+        required
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Ex: Carlos"
+      />
+      <label for="email">Email:</label>
+      <input
+        required
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Ex: exemplo@exemplo.com"
+      />
+      <label for="gender">Email:</label>
+      <select required name="gender" id="gender">
+        <option value="male">Masculino</option>
+        <option value="female">Feminino</option>
+      </select>
+      <label for="active">
+        <input type="radio" checked name="active" value="active" /> Ativo
+      </label>
+      <label for="disabled">
+        <input type="radio" name="disabled" value="disabled" />Desativo
+      </label>
+      <button type="submit" onclick="" value="submit()">Registrar</button>
+    </form>
     <table>
       <thead>
         <tr>
