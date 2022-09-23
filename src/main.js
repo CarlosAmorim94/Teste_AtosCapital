@@ -2,6 +2,10 @@ const token =
   "592116e2b217eea89dbd106c1736451b52d79a4b1d0e0fd8ea526c3ec0c2bd32";
 const baseURL = "https://gorest.co.in/public/v2/users";
 const form = document.querySelector(".form-active");
+const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
+const genderInput = document.querySelector("#gender");
+const statusInput = document.querySelector("#status");
 
 async function getUsers() {
   const tbody = document.querySelector(".tbody");
@@ -44,7 +48,25 @@ async function getUsers() {
 }
 
 async function addUser() {
-  console.log("Usuário add");
+  const newUser = {
+    name: nameInput.value,
+    email: emailInput.value,
+    status: statusInput.value,
+    gender: genderInput.value,
+  };
+
+  console.log(newUser);
+
+  await fetch(baseURL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(newUser),
+  }).catch((error) => {
+    console.error("Error:", error);
+  });
 }
 
 async function editUser(id) {
@@ -58,7 +80,7 @@ async function deleteUser(id) {
   }).catch((error) => {
     console.error("Error:", error);
   });
-
+  alert("Item deletado!");
   location.reload();
 }
 
@@ -66,5 +88,5 @@ getUsers();
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  alert("enviou!");
+  addUser();
 });

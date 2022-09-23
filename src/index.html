@@ -20,8 +20,9 @@
         type="text"
         name="name"
         id="name"
-        placeholder="Ex: Carlos"
+        placeholder="Ex: José ou Maria"
       />
+
       <label for="email">Email:</label>
       <input
         required
@@ -30,17 +31,21 @@
         id="email"
         placeholder="Ex: exemplo@exemplo.com"
       />
-      <label for="gender">Email:</label>
+
+      <label for="gender">Gênero:</label>
       <select required name="gender" id="gender">
+        <option></option>
         <option value="male">Masculino</option>
         <option value="female">Feminino</option>
       </select>
-      <label for="active">
-        <input type="radio" checked name="active" value="active" /> Ativo
-      </label>
-      <label for="disabled">
-        <input type="radio" name="disabled" value="disabled" />Desativo
-      </label>
+
+      <label for="status">Status:</label>
+      <select required name="status" id="status">
+        <option></option>
+        <option value="active">Ativado</option>
+        <option value="disabled">Desativado</option>
+      </select>
+
       <button type="submit" onclick="" value="submit()">Registrar</button>
     </form>
     <table>
