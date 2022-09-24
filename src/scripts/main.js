@@ -1,4 +1,5 @@
-import { services } from "../utils/services.js";
+import { deleteUser } from "../utils/deleteUser.js";
+import { addUser } from "../utils/addUser.js";
 import { variables } from "../utils/variables.js";
 
 const form = document.querySelector(".form-active");
@@ -29,8 +30,8 @@ async function getUsers() {
     columnButtons.appendChild(deleteButton);
     columnButtons.classList.add("action-buttons");
 
-    editButton.addEventListener("click", () => editUser(user.id));
-    deleteButton.addEventListener("click", () => deleteUser(user.id));
+    editButton.addEventListener("click", () => editUsers(user.id));
+    deleteButton.addEventListener("click", () => deleteUsers(user.id));
 
     id.innerHTML = user.id;
     name.innerHTML = user.name;
@@ -47,7 +48,7 @@ async function getUsers() {
   });
 }
 
-async function addUser() {
+async function addUsers() {
   const newUser = {
     name: nameInput.value,
     email: emailInput.value,
@@ -55,24 +56,17 @@ async function addUser() {
     gender: genderInput.value,
   };
 
-  await fetch(variables.baseURL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${variables.token}`,
-    },
-    body: JSON.stringify(newUser),
-  }).catch((error) => {
-    console.error("Error:", error);
-  });
+  addUser(newUser);
+  alert("Usuário cadastrado!");
+  location.href = "../../index.html";
 }
 
-async function editUser(id) {
+async function editUsers(id) {
   location.href = `/src/pages/edit_users.html?id=${id}`;
 }
 
-async function deleteUser(id) {
-  services.deleteItem(id);
+async function deleteUsers(id) {
+  deleteUser(id);
   alert("Item deletado!");
   location.reload();
 }
@@ -81,5 +75,5 @@ getUsers();
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  addUser();
+  addUsers();
 });

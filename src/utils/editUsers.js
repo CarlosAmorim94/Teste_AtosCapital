@@ -1,4 +1,5 @@
-import { variables } from "../utils/variables.js";
+import { variables } from "./variables.js";
+import { getDetail } from "./getDetail.js";
 
 const editForm = document.querySelector(".form-edit");
 const editNameInput = document.querySelector("#name-edit");
@@ -9,20 +10,9 @@ const editStatusInput = document.querySelector("#status-edit");
 const paramsURL = new URL(window.location);
 const id = paramsURL.searchParams.get("id");
 
-async function getDetail() {
-  const userDetail = await fetch(`${variables.baseURL}/${id}`)
-    .then((user) => user.json())
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+getDetail(editNameInput, editEmailInput, editGenderInput, editStatusInput, id);
 
-  editNameInput.value = userDetail.name;
-  editEmailInput.value = userDetail.email;
-  editGenderInput.value = userDetail.gender;
-  editStatusInput.value = userDetail.status;
-}
-
-async function editUser() {
+async function editUsers() {
   const response = await fetch(`${variables.baseURL}/${id}`, {
     method: "PUT",
     headers: {
@@ -42,12 +32,10 @@ async function editUser() {
   location.href = `/index.html`;
 }
 
-getDetail();
-
 console.log(editEmailInput.value);
 
 editForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  editUser();
+  editUsers();
 });
