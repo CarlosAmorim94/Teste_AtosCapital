@@ -38,18 +38,6 @@ td {
   padding: 0.5rem 1rem;
 }
 
-.action-buttons button {
-  cursor: pointer;
-  margin: 0 2px;
-}
-
-.action-buttons button:hover {
-  background-color: #213435;
-  color: #fff;
-  border-radius: 2px;
-  border: 2px solid #213435;
-}
-
 h1 {
   width: 100%;
   text-align: center;
@@ -85,11 +73,41 @@ label {
 }
 
 .container {
-  width: 50%;
+  width: 60%;
   margin: 1rem auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   background-color: lightgray;
   border-radius: 1rem;
+}
+
+.id {
+  width: 4rem;
+}
+
+.name {
+  width: 18rem;
+}
+
+.email {
+  width: 20rem;
+}
+
+.action-buttons {
+  width: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.action-buttons button {
+  cursor: pointer;
+}
+
+.action-buttons button:hover {
+  background-color: #213435;
+  color: #fff;
+  border-radius: 2px;
+  border: 2px solid #213435;
 }

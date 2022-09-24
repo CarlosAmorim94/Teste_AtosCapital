@@ -28,6 +28,7 @@ async function getUsers() {
 
     columnButtons.appendChild(editButton);
     columnButtons.appendChild(deleteButton);
+
     columnButtons.classList.add("action-buttons");
 
     editButton.addEventListener("click", () => editUsers(user.id));
